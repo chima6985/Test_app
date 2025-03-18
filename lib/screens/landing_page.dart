@@ -9,9 +9,11 @@ class LandingPage extends StatelessWidget {
     return Scaffold(
       // backgroundColor: backGroungColor,
       body: Center(
-        child: Container(
-          
-          child: Image.asset('assets/logo.png'),
+        child: ClipRRect(
+          child: Container(
+            
+            child: Image.asset('assets/logo.png'),
+          ),
         ),
       ),
     );
