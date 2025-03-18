@@ -15,7 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: Color(0xFFE0EECD)),
-      home: OnboardScreen(),
+      home: PageView(children: [
+        
+        ],
+      ),
     );
   }
 }
