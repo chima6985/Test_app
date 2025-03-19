@@ -29,10 +29,13 @@ class SignupScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: Icon(
-                  Icons.arrow_back,
-                  size: 42,
-                  color: Color(0XFF3C6255),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Icon(
+                    Icons.arrow_back,
+                    size: 42,
+                    color: Color(0XFF3C6255),
+                  ),
                 ),
               ),
               SizedBox(height: 30),
@@ -82,17 +85,18 @@ class SignupScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 25),
               Center(
                 child: Container(
                   height: 60,
                   width: 352,
-                  decoration: BoxDecoration(),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Color(0XFF609966), width: 2),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
                   child: ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: WidgetStatePropertyAll(
-                        Color(0XFF609966),
-                      ),
+                      backgroundColor: WidgetStatePropertyAll(Colors.white),
                       shape: WidgetStatePropertyAll(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
@@ -106,19 +110,78 @@ class SignupScreen extends StatelessWidget {
                         Icon(
                           Icons.mail_outline_outlined,
                           size: 35,
-                          color: Colors.white,
+                          color: Color(0XFF3C4D47),
                         ),
-                        SizedBox(width: 8),
+                        SizedBox(width: 10),
                         Text(
-                          'CONTINUE WITH GOOGLE',
+                          'CONTINUE WITH E-MAIL',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Color(0XFF3C4D47),
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
                       ],
                     ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 25),
+              Center(
+                child: Text(
+                  'OR SIGN UP WITH GOOGLE',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0XFF3E3E3EB5),
+                  ),
+                ),
+              ),
+              SizedBox(height: 30),
+              Center(
+                child: Container(
+                  height: 60,
+                  width: 352,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Email address',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    onChanged: (value) {},
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Center(
+                child: Container(
+                  height: 60,
+                  width: 352,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Name',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    onChanged: (value) {},
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Center(
+                child: Container(
+                  height: 60,
+                  width: 352,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Password',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    onChanged: (value) {},
                   ),
                 ),
               ),
