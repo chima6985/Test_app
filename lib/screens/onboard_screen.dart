@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_application/screens/signup_screen.dart';
 
 class OnboardScreen extends StatelessWidget {
   OnboardScreen({super.key});
@@ -19,19 +20,34 @@ class OnboardScreen extends StatelessWidget {
               ),
             ),
             child: Container(
-              margin: EdgeInsets.only(top: 100),
+              margin: EdgeInsets.only(top: 80),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'Hi Chima ! Welcome \n to Harmony Hush',
-                    style: TextStyle(color: Colors.black, fontSize: 25),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        'Hi Chima ! Welcome \n to Harmony Hush',
+                        style: TextStyle(color: Colors.white, fontSize: 25),
+                      ),
+                      SizedBox(height: 30),
+                      Text(
+                        '🧘‍♂️ Explore Inner Peace, One Meditation at a Time 🧘‍♀️ ',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 15,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
                   ),
+
                   Container(
                     child: Container(
-                      margin: EdgeInsets.only(bottom: 70),
+                      margin: EdgeInsets.only(bottom: 30),
                       height: 60,
-                      width: 310,
+                      width: 330,
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor: WidgetStatePropertyAll(
@@ -43,10 +59,21 @@ class OnboardScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SignupScreen(),
+                            ),
+                          );
+                        },
                         child: Text(
                           'Get Started',
-                          style: TextStyle(color: Color(0XFF3C6255)),
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0XFF3C6255),
+                          ),
                         ),
                       ),
                     ),

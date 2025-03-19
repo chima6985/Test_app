@@ -193,7 +193,7 @@ class SignupScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 30),
                   Center(
                     child: RichText(
                       text: TextSpan(
@@ -204,18 +204,55 @@ class SignupScreen extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                         ),
                         children: [
-                          WidgetSpan(child: GestureDetector(
-                            onTap: () {
-                              Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => LandingPage(),),);
-                            },
-                            child: Text('PRIVACY POLICY', style: TextStyle(
-                              color: Color(0XFF3E3E3EB5),
-                              fontSize: 15,
-                              fontWeight: FontWeight.w700
-                            ),),
-                          ),)
-                        ]
+                          WidgetSpan(
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => LandingPage(),
+                                  ),
+                                );
+                              },
+                              child: Text(
+                                'PRIVACY POLICY',
+                                style: TextStyle(
+                                  color: Color(0XFF3E3E3EB5),
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 55),
+                  Center(
+                    child: Container(
+                      height: 55,
+                      width: 320,
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor: WidgetStatePropertyAll(
+                            Color(0XFF609966),
+                          ),
+                          shape: WidgetStatePropertyAll(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                          ),
+                        ),
+                        onPressed: () {},
+                        child: Text(
+                          'SIGN UP',
+                          style: TextStyle(
+                            color: Color(0XFFFFFFFF),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
                       ),
                     ),
                   ),
