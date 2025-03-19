@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_application/screens/landing_page.dart';
 // import 'package:test_application/screens/landing_page.dart';
 import 'package:test_application/screens/onboard_screen.dart';
 
@@ -16,7 +17,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: Color(0xFFE0EECD)),
       home: PageView(children: [
-        
+        LandingPage(),
+        OnboardScreen(),
+        OnboardScreen()
         ],
       ),
     );
