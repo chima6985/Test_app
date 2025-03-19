@@ -35,7 +35,11 @@ class MyApp extends StatelessWidget {
           SmoothPageIndicator(
             controller: _controller,
             count: 3,
-            effect: ExpandingDotsEffect(activeDotColor: Colors.green.shade600),
+            effect: ExpandingDotsEffect(
+              activeDotColor: Colors.green.shade600,
+              dotColor: Colors.green.shade200,
+              spacing: 20,
+            ),
           ),
         ],
       ),
