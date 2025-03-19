@@ -5,12 +5,12 @@ import 'package:test_application/screens/onboard_screen.dart';
 import 'package:test_application/screens/onboard_screen2.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   final _controller = PageController();
- MyApp({super.key});
+  MyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -23,17 +23,14 @@ class MyApp extends StatelessWidget {
           Expanded(
             child: PageView(
               controller: _controller,
-              children: [
-              LandingPage(),
-              OnboardScreen(),
-              OnboardScreen2(),
-              ],
+              children: [LandingPage(), OnboardScreen(), OnboardScreen2()],
             ),
           ),
-          SmoothPageIndicator(controller: _controller, count: 3,
-          effect:ExpandingDotsEffect(
-            activeDotColor: Colors.green.shade600
-          ) ,)
+          SmoothPageIndicator(
+            controller: _controller,
+            count: 3,
+            effect: ScaleEffect(activeDotColor: Colors.green.shade600),
+          ),
         ],
       ),
     );
