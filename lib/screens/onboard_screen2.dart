@@ -44,7 +44,7 @@ class OnboardScreen2 extends StatelessWidget {
                 ),
                 onPressed: () {},
                 child: Text(
-                  'SIGN IN',
+                  'SIGN UP',
                   style: TextStyle(
                     color: Color(0XFFFFFFFF),
                     fontSize: 16,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_application/screens/landing_page.dart';
 
 class SignupScreen extends StatelessWidget {
   SignupScreen({super.key});
@@ -148,6 +149,7 @@ class SignupScreen extends StatelessWidget {
                       height: 60,
                       width: 352,
                       child: TextField(
+                        keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                           hintText: 'Email address',
                           border: OutlineInputBorder(
@@ -188,6 +190,32 @@ class SignupScreen extends StatelessWidget {
                           ),
                         ),
                         onChanged: (value) {},
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Center(
+                    child: RichText(
+                      text: TextSpan(
+                        text: 'I have read the  ',
+                        style: TextStyle(
+                          color: Color(0XFF3E3E3EB5),
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        children: [
+                          WidgetSpan(child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => LandingPage(),),);
+                            },
+                            child: Text('PRIVACY POLICY', style: TextStyle(
+                              color: Color(0XFF3E3E3EB5),
+                              fontSize: 15,
+                              fontWeight: FontWeight.w700
+                            ),),
+                          ),)
+                        ]
                       ),
                     ),
                   ),
