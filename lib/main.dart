@@ -3,6 +3,7 @@ import 'package:test_application/screens/landing_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:test_application/screens/onboard_screen.dart';
 import 'package:test_application/screens/onboard_screen2.dart';
+import 'package:test_application/screens/signup_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,13 +24,18 @@ class MyApp extends StatelessWidget {
           Expanded(
             child: PageView(
               controller: _controller,
-              children: [LandingPage(), OnboardScreen(), OnboardScreen2()],
+              children: [
+                LandingPage(),
+                OnboardScreen(),
+                OnboardScreen2(),
+                SignupScreen(),
+              ],
             ),
           ),
           SmoothPageIndicator(
             controller: _controller,
             count: 3,
-            effect: ScaleEffect(activeDotColor: Colors.green.shade600),
+            effect: ExpandingDotsEffect(activeDotColor: Colors.green.shade600),
           ),
         ],
       ),
