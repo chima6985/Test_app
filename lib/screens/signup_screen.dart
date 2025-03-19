@@ -35,7 +35,7 @@ class SignupScreen extends StatelessWidget {
                   color: Color(0XFF3C6255),
                 ),
               ),
-              SizedBox(height: 25),
+              SizedBox(height: 30),
               Center(
                 child: Text(
                   'Create Your account',
@@ -46,7 +46,82 @@ class SignupScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 25),
+              SizedBox(height: 40),
+              Center(
+                child: Container(
+                  height: 60,
+                  width: 352,
+                  decoration: BoxDecoration(),
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStatePropertyAll(
+                        Color(0XFF609966),
+                      ),
+                      shape: WidgetStatePropertyAll(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.facebook, size: 35, color: Colors.white),
+                        SizedBox(width: 8),
+                        Text(
+                          'CONTINUE WITH FACEBOOK',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Center(
+                child: Container(
+                  height: 60,
+                  width: 352,
+                  decoration: BoxDecoration(),
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStatePropertyAll(
+                        Color(0XFF609966),
+                      ),
+                      shape: WidgetStatePropertyAll(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.mail_outline_outlined,
+                          size: 35,
+                          color: Colors.white,
+                        ),
+                        SizedBox(width: 8),
+                        Text(
+                          'CONTINUE WITH GOOGLE',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
