@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:test_application/screens/landing_page.dart';
-// import 'package:test_application/screens/landing_page.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:test_application/screens/onboard_screen.dart';
+import 'package:test_application/screens/onboard_screen2.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final _controller = PageController();
+ MyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -16,10 +18,22 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: Color(0xFFE0EECD)),
-      home: PageView(children: [
-        LandingPage(),
-        OnboardScreen(),
-        OnboardScreen()
+      home: Column(
+        children: [
+          Expanded(
+            child: PageView(
+              controller: _controller,
+              children: [
+              LandingPage(),
+              OnboardScreen(),
+              OnboardScreen2(),
+              ],
+            ),
+          ),
+          SmoothPageIndicator(controller: _controller, count: 3,
+          effect:ExpandingDotsEffect(
+            activeDotColor: Colors.green.shade600
+          ) ,)
         ],
       ),
     );

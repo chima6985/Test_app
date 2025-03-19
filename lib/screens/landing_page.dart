@@ -6,12 +6,14 @@ class LandingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mqr = MediaQuery.of(context).size;
     return Scaffold(
       // backgroundColor: backGroungColor,
       body: Center(
         child: ClipRRect(
           child: Container(
-            
+            height: mqr.height,
+            width: mqr.width,
             child: Image.asset('assets/logo.png'),
           ),
         ),
