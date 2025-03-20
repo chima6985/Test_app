@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_application/screens/landing_page.dart';
-import 'package:test_application/screens/onboard_screen.dart';
+// import 'package:test_application/screens/onboard_screen.dart';
 
 class SignupScreen extends StatelessWidget {
   SignupScreen({super.key});
@@ -148,7 +148,7 @@ class SignupScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 30),
                   Center(
-                    child: Container(
+                    child: SizedBox(
                       height: 60,
                       width: 352,
                       child: TextField(
@@ -165,7 +165,7 @@ class SignupScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Center(
-                    child: Container(
+                    child: SizedBox(
                       height: 60,
                       width: 352,
                       child: TextField(
@@ -181,7 +181,7 @@ class SignupScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Center(
-                    child: Container(
+                    child: SizedBox(
                       height: 60,
                       width: 352,
                       child: TextField(
@@ -233,7 +233,7 @@ class SignupScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 55),
                   Center(
-                    child: Container(
+                    child: SizedBox(
                       height: 55,
                       width: 320,
                       child: ElevatedButton(
