@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_application/screens/signup_screen.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class OnboardScreen extends StatelessWidget {
   OnboardScreen({super.key});
@@ -26,16 +27,23 @@ class OnboardScreen extends StatelessWidget {
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      'Hi Chima ! Welcome \n to Harmony Hush',
-                      style: TextStyle(color: Colors.white, fontSize: 25),
+                    AnimatedTextKit(
+                      animatedTexts: [
+                        TypewriterAnimatedText(
+                          'Hi Chima ! Welcome \n to Harmony Hush',
+                          textStyle: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(height: 30),
                     Text(
                       '🧘‍♂️ Explore Inner Peace, One Meditation at a Time 🧘‍♀️ ',
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
-                        fontSize: 15,
+                        fontSize: 20,
                         color: Colors.white,
                       ),
                     ),

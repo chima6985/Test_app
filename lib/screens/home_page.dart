@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:test_application/screens/signin_screen.dart';
 import 'landing_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:test_application/screens/onboard_screen.dart';
 import 'package:test_application/screens/onboard_screen2.dart';
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  bool onLastPage = false;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +30,11 @@ class MyHomePage extends StatelessWidget {
                 children: [
                   PageView(
                     controller: _controller,
+                    onPageChanged: (index) {
+                      setState(() {
+                        onLastPage = (index == 2);
+                      });
+                    },
                     children: [
                       LandingPage(),
                       OnboardScreen(),
@@ -35,12 +48,9 @@ class MyHomePage extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            _controller.nextPage(
-                              duration: Duration(milliseconds: 500),
-                              curve: Curves.easeIn,
-                            );
+                            _controller.jumpToPage(2);
                           },
-                          child: Text('Next'),
+                          child: Text('SKip'),
                         ),
                         Positioned(
                           bottom: 10,
@@ -54,12 +64,27 @@ class MyHomePage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        GestureDetector(
-                          onTap: () {
-                            _controller.jumpToPage(2);
-                          },
-                          child: Text('Skip'),
-                        ),
+                        onLastPage
+                            ? GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SigninScreen(),
+                                  ),
+                                );
+                              },
+                              child: Text('Done'),
+                            )
+                            : GestureDetector(
+                              onTap: () {
+                                _controller.nextPage(
+                                  duration: Duration(milliseconds: 500),
+                                  curve: Curves.easeIn,
+                                );
+                              },
+                              child: Text('Next'),
+                            ),
                       ],
                     ),
                   ),
