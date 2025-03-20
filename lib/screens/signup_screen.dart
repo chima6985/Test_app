@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_application/screens/landing_page.dart';
+import 'package:test_application/screens/onboard_screen.dart';
 
 class SignupScreen extends StatelessWidget {
   SignupScreen({super.key});
@@ -36,7 +37,9 @@ class SignupScreen extends StatelessWidget {
                       ],
                     ),
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
                       child: Icon(
                         Icons.arrow_back,
                         size: 42,

@@ -36,7 +36,9 @@ class SigninScreen extends StatelessWidget {
                       ],
                     ),
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
                       child: Icon(
                         Icons.arrow_back,
                         size: 42,

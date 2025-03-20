@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_application/screens/home_page.dart';
 import 'package:test_application/screens/landing_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:test_application/screens/onboard_screen.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: Color(0xFFE0EECD)),
-      home: LandingPage()
+      home: MyHomePage()
     );
   }
 }
