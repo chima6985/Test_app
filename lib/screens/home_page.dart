@@ -28,16 +28,39 @@ class MyHomePage extends StatelessWidget {
                       OnboardScreen2(),
                     ],
                   ),
-                  Positioned(
-                    bottom: 10,
-                    child: SmoothPageIndicator(
-                      controller: _controller,
-                      count: 3,
-                      effect: ExpandingDotsEffect(
-                        activeDotColor: Colors.green.shade600,
-                        dotColor: Colors.green.shade200,
-                        spacing: 20,
-                      ),
+                  Container(
+                    padding: EdgeInsets.only(bottom: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            _controller.nextPage(
+                              duration: Duration(milliseconds: 500),
+                              curve: Curves.easeIn,
+                            );
+                          },
+                          child: Text('Next'),
+                        ),
+                        Positioned(
+                          bottom: 10,
+                          child: SmoothPageIndicator(
+                            controller: _controller,
+                            count: 3,
+                            effect: JumpingDotEffect(
+                              activeDotColor: Colors.green.shade600,
+                              dotColor: Colors.green.shade200,
+                              spacing: 20,
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            _controller.jumpToPage(2);
+                          },
+                          child: Text('Skip'),
+                        ),
+                      ],
                     ),
                   ),
                 ],

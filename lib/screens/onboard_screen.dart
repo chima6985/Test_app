@@ -44,7 +44,7 @@ class OnboardScreen extends StatelessWidget {
 
                 Container(
                   child: Container(
-                    margin: EdgeInsets.only(bottom: 30),
+                    margin: EdgeInsets.only(bottom: 80),
                     height: 60,
                     width: 330,
                     child: ElevatedButton(

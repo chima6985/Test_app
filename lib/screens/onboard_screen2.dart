@@ -31,10 +31,10 @@ class OnboardScreen2 extends StatelessWidget {
               'Foster global peace and well-beign through \n accessible, guided meditation practices.',
               style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
             ),
-            SizedBox(height: 120),
+            SizedBox(height: 130),
             Container(
-              height: 55,
-              width: 320,
+              height: 60,
+              width: 330,
               child: ElevatedButton(
                 style: ButtonStyle(
                   backgroundColor: WidgetStatePropertyAll(Color(0XFF609966)),
@@ -97,7 +97,7 @@ class OnboardScreen2 extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 35),
+            SizedBox(height: 60),
           ],
         ),
       ),
