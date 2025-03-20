@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LandingPage extends StatelessWidget {
+  
   LandingPage({super.key});
   // Color backGroungColor = Color(0xFFE0EECD);
 

@@ -20,31 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: Color(0xFFE0EECD)),
-      home: Column(
-        children: [
-          Expanded(
-            child: PageView(
-              controller: _controller,
-              children: [
-                LandingPage(),
-                OnboardScreen(),
-                OnboardScreen2(),
-                // SignupScreen(),
-                SigninScreen(),
-              ],
-            ),
-          ),
-          SmoothPageIndicator(
-            controller: _controller,
-            count: 3,
-            effect: ExpandingDotsEffect(
-              activeDotColor: Colors.green.shade600,
-              dotColor: Colors.green.shade200,
-              spacing: 20,
-            ),
-          ),
-        ],
-      ),
+      home: LandingPage()
     );
   }
 }
