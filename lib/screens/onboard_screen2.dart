@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_application/screens/signup_screen.dart';
 
 class OnboardScreen2 extends StatelessWidget {
   OnboardScreen2({super.key});
@@ -42,7 +43,12 @@ class OnboardScreen2 extends StatelessWidget {
                     ),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignupScreen()),
+                  );
+                },
                 child: Text(
                   'SIGN UP',
                   style: TextStyle(

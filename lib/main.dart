@@ -4,6 +4,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:test_application/screens/onboard_screen.dart';
 import 'package:test_application/screens/onboard_screen2.dart';
 import 'package:test_application/screens/signup_screen.dart';
+import 'package:test_application/screens/signin_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
                 LandingPage(),
                 OnboardScreen(),
                 OnboardScreen2(),
-                SignupScreen(),
+                // SignupScreen(),
+                SigninScreen(),
               ],
             ),
           ),
