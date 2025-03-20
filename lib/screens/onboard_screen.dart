@@ -33,17 +33,17 @@ class OnboardScreen extends StatelessWidget {
                           'Hi Chima ! Welcome \n to Harmony Hush',
                           textStyle: TextStyle(
                             color: Colors.white,
-                            fontSize: 25,
+                            fontSize: 20,
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 20),
                     Text(
                       '🧘‍♂️ Explore Inner Peace, One Meditation at a Time 🧘‍♀️ ',
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
-                        fontSize: 20,
+                        fontSize: 15,
                         color: Colors.white,
                       ),
                     ),
