@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "325640309682",
+    "project_id": "test-app-6c949",
+    "storage_bucket": "test-app-6c949.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:325640309682:android:d0d6c82d80a2f52535f2ab",
+        "android_client_info": {
+          "package_name": "com.chima.test_application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAr3EdS_iSynGleLpg8fQc7zwibJ-sfJeg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
