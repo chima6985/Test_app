@@ -30,7 +30,7 @@ class OnboardScreen extends StatelessWidget {
                     AnimatedTextKit(
                       animatedTexts: [
                         TypewriterAnimatedText(
-                          'Hi Chima ! Welcome \n to Harmony Hush',
+                          'Hi Chima ! Wellcome \n to Harmony Hush',
                           textStyle: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
