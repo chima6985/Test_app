@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_application/screens/landing_page.dart';
 // import 'package:test_application/screens/onboard_screen.dart';
 import 'dart:developer';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignupScreen extends StatefulWidget {
   SignupScreen({super.key});
@@ -12,6 +13,7 @@ class SignupScreen extends StatefulWidget {
 
 class _SignupScreenState extends State<SignupScreen> {
   final Color singupScreenColor = Color(0XFFECF4E2);
+  final _auth = FirebaseAuth.instance;
 
   String? email;
   String? password;
@@ -265,11 +267,18 @@ class _SignupScreenState extends State<SignupScreen> {
                             ),
                           ),
                         ),
-                        onPressed: () {
-                          log(email.toString());
-                          log(name.toString());
-                          log(password.toString());
-                        },
+                        onPressed: () async {
+                          try{
+                            final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+                            if(newUser !=null){
+                              Navigator.push(context, MaterialPageRoute(builder: (contexxt) => ,),)
+                            }
+                        }
+                        catch(e){
+                          print(e);
+                        }
+                          },
+                          
                         child: Text(
                           'SIGN UP',
                           style: TextStyle(
