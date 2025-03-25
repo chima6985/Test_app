@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_application/screens/base_screen.dart';
 import 'package:test_application/screens/landing_page.dart';
-// import 'package:test_application/screens/onboard_screen.dart';
-import 'dart:developer';
+import '';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -279,7 +278,6 @@ class _SignupScreenState extends State<SignupScreen> {
                           print(e);
                         }
                           },
-                          
                         child: Text(
                           'SIGN UP',
                           style: TextStyle(
