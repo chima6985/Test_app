@@ -12,23 +12,23 @@ class _BaseScreenState extends State<BaseScreen> {
   final _auth = FirebaseAuth.instance;
   User? loggedInUser;
 
-  @override
-  void initState() {
-    super.initState();
-    getCurrentUser();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   getCurrentUser();
+  // }
 
-  void getCurrentUser() {
-    try {
-      final userr = _auth.currentUser;
-      if (userr != null) {
-        loggedInUser = userr;
-        print(loggedInUser?.email);
-      }
-    } catch (e) {
-      print(e);
-    }
-  }
+  // void getCurrentUser() {
+  //   try {
+  //     final userr = _auth.currentUser;
+  //     if (userr != null) {
+  //       loggedInUser = userr;
+  //       print(loggedInUser?.email);
+  //     }
+  //   } catch (e) {
+  //     print(e);
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
