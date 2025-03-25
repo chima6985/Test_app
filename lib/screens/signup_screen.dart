@@ -269,7 +269,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         ),
                         onPressed: () async {
                           try{
-                            final newUser = await _auth.createUserWithEmailAndPassword(email: , password: );
+                            final newUser = await _auth.createUserWithEmailAndPassword(email: email ?? '' , password: (password != null ? password! : '') );
                             if(newUser !=null){
                               Navigator.push(context, MaterialPageRoute(builder: (contexxt) => BaseScreen(),),);
                             }
