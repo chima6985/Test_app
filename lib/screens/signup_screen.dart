@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_application/screens/base_screen.dart';
 import 'package:test_application/screens/landing_page.dart';
 // import 'package:test_application/screens/onboard_screen.dart';
 import 'dart:developer';
@@ -269,9 +270,9 @@ class _SignupScreenState extends State<SignupScreen> {
                         ),
                         onPressed: () async {
                           try{
-                            final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+                            final newUser = await _auth.createUserWithEmailAndPassword(email: , password: );
                             if(newUser !=null){
-                              Navigator.push(context, MaterialPageRoute(builder: (contexxt) => ,),)
+                              Navigator.push(context, MaterialPageRoute(builder: (contexxt) => BaseScreen(),),);
                             }
                         }
                         catch(e){
