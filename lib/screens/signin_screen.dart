@@ -153,7 +153,7 @@ class SigninScreen extends StatelessWidget {
                     child: TextField(
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
-                        hintText: 'Email address',
+                        labelText: 'Email address',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -169,7 +169,7 @@ class SigninScreen extends StatelessWidget {
                     width: 352,
                     child: TextField(
                       decoration: InputDecoration(
-                        hintText: 'Name',
+                        labelText: 'Name',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),

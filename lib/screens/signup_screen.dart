@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:test_application/screens/landing_page.dart';
 // import 'package:test_application/screens/onboard_screen.dart';
+import 'dart:developer';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
   SignupScreen({super.key});
+
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
   final Color singupScreenColor = Color(0XFFECF4E2);
+
+  String? email;
+  String? password;
+  String? name;
+
   @override
   Widget build(BuildContext context) {
     final mqr = MediaQuery.of(context).size;
@@ -154,12 +166,14 @@ class SignupScreen extends StatelessWidget {
                       child: TextField(
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
-                          hintText: 'Email address',
+                          labelText: 'Email address',
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
-                        onChanged: (value) {},
+                        onChanged: (value) {
+                          email = value;
+                        },
                       ),
                     ),
                   ),
@@ -170,12 +184,14 @@ class SignupScreen extends StatelessWidget {
                       width: 352,
                       child: TextField(
                         decoration: InputDecoration(
-                          hintText: 'Name',
+                          labelText: 'Name',
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
-                        onChanged: (value) {},
+                        onChanged: (value) {
+                          name = value;
+                        },
                       ),
                     ),
                   ),
@@ -187,12 +203,14 @@ class SignupScreen extends StatelessWidget {
                       child: TextField(
                         obscureText: true,
                         decoration: InputDecoration(
-                          hintText: 'Password',
+                          labelText: 'Password',
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
-                        onChanged: (value) {},
+                        onChanged: (value) {
+                          password = value;
+                        },
                       ),
                     ),
                   ),
@@ -247,7 +265,11 @@ class SignupScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          log(email.toString());
+                          log(name.toString());
+                          log(password.toString());
+                        },
                         child: Text(
                           'SIGN UP',
                           style: TextStyle(
