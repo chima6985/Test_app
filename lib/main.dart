@@ -10,7 +10,7 @@ import 'package:test_application/screens/splash_screen.dart';
 // import 'package:test_application/screens/signin_screen.dart';
 
 void main() async {
-  // await Firebase.initializeApp();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 class MyApp extends StatelessWidget {
