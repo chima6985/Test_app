@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:test_application/screens/signup_screen.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
-class OnboardScreen extends StatelessWidget {
+class OnboardScreen extends StatefulWidget {
   OnboardScreen({super.key});
+
+  @override
+  State<OnboardScreen> createState() => _OnboardScreenState();
+}
+
+class _OnboardScreenState extends State<OnboardScreen> {
   final Color onboardScreenColor = Color(0XFF9DC08B);
+
   @override
   Widget build(BuildContext context) {
     final mqr = MediaQuery.of(context).size;
