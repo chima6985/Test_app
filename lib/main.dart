@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:test_application/screens/home_page.dart';
+// import 'package:test_application/screens/home_page.dart';
+import 'package:test_application/screens/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -11,7 +12,7 @@ void main() async {
     messagingSenderId: 'your-messaging-sender-id',
     projectId: 'test-app-6c949',
   );
-  
+
   await Firebase.initializeApp(options: options);
   runApp(MyApp());
 }
@@ -21,6 +22,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: MyHomePage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: SplashScreen());
   }
 }
