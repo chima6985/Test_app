@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_application/screens/base_screen.dart';
 import 'package:test_application/screens/landing_page.dart';
-import '';
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 
 class SignupScreen extends StatefulWidget {
   SignupScreen({super.key});
@@ -13,7 +12,7 @@ class SignupScreen extends StatefulWidget {
 
 class _SignupScreenState extends State<SignupScreen> {
   final Color singupScreenColor = Color(0XFFECF4E2);
-  final _auth = FirebaseAuth.instance;
+  // final _auth = FirebaseAuth.instance;
 
   String? email;
   String? password;
@@ -268,15 +267,15 @@ class _SignupScreenState extends State<SignupScreen> {
                           ),
                         ),
                         onPressed: () async {
-                          try{
-                            final newUser = await _auth.createUserWithEmailAndPassword(email: email ?? '' , password: (password != null ? password! : '') );
-                            if(newUser !=null){
-                              Navigator.push(context, MaterialPageRoute(builder: (contexxt) => BaseScreen(),),);
-                            }
-                        }
-                        catch(e){
-                          print(e);
-                        }
+                        //   try{
+                        //     final newUser = await _auth.createUserWithEmailAndPassword(email: email ?? '' , password: (password != null ? password! : '') );
+                        //     if(newUser !=null){
+                        //       Navigator.push(context, MaterialPageRoute(builder: (contexxt) => BaseScreen(),),);
+                        //     }
+                        // }
+                        // catch(e){
+                        //   print(e);
+                        // }
                           },
                         child: Text(
                           'SIGN UP',
