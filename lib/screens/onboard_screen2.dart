@@ -26,12 +26,12 @@ class OnboardScreen2 extends StatelessWidget {
               'We are what we do',
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
             ),
-            SizedBox(height: 50),
+            SizedBox(height: 30),
             Text(
               'Foster global peace and well-beign through \n accessible, guided meditation practices.',
               style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
             ),
-            SizedBox(height: 130),
+            SizedBox(height: 100),
             Container(
               height: 60,
               width: 330,
