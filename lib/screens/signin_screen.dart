@@ -13,11 +13,11 @@ class SigninScreen extends StatelessWidget {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: Container(
-            width: mqr.width,
-            height: mqr.height,
-            decoration: BoxDecoration(color: singupScreenColor),
+        body: Container(
+          width: mqr.width,
+          height: mqr.height,
+          decoration: BoxDecoration(color: singupScreenColor),
+          child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -29,7 +29,7 @@ class SigninScreen extends StatelessWidget {
                     color: Color(0XFFE5E5E5),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
+                        color: Colors.black.withValues(alpha: 0.1),
                         spreadRadius: 2,
                         offset: Offset(0, 0),
                       ),
@@ -237,8 +237,7 @@ class SigninScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-
-                SizedBox(height: 80),
+                SizedBox(height: 20),
                 Center(
                   child: RichText(
                     text: TextSpan(
@@ -275,6 +274,7 @@ class SigninScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(height: 50),
               ],
             ),
           ),

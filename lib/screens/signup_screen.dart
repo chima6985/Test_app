@@ -1,7 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:test_application/screens/base_screen.dart';
 import 'package:test_application/screens/landing_page.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignupScreen extends StatefulWidget {
   SignupScreen({super.key});
@@ -12,7 +14,8 @@ class SignupScreen extends StatefulWidget {
 
 class _SignupScreenState extends State<SignupScreen> {
   final Color singupScreenColor = Color(0XFFECF4E2);
-  // final _auth = FirebaseAuth.instance;
+  final _auth = FirebaseAuth.instance;
+  bool showLoader = false;
 
   String? email;
   String? password;
@@ -26,13 +29,13 @@ class _SignupScreenState extends State<SignupScreen> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: SafeArea(
-            child: Container(
-              margin: EdgeInsets.all(0),
-              width: mqr.width,
-              height: mqr.height,
-              decoration: BoxDecoration(color: singupScreenColor),
+        body: SafeArea(
+          child: Container(
+            margin: EdgeInsets.all(0),
+            width: mqr.width,
+            height: mqr.height,
+            decoration: BoxDecoration(color: singupScreenColor),
+            child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -267,24 +270,44 @@ class _SignupScreenState extends State<SignupScreen> {
                           ),
                         ),
                         onPressed: () async {
-                        //   try{
-                        //     final newUser = await _auth.createUserWithEmailAndPassword(email: email ?? '' , password: (password != null ? password! : '') );
-                        //     if(newUser !=null){
-                        //       Navigator.push(context, MaterialPageRoute(builder: (contexxt) => BaseScreen(),),);
-                        //     }
-                        // }
-                        // catch(e){
-                        //   print(e);
-                        // }
-                          },
-                        child: Text(
-                          'SIGN UP',
-                          style: TextStyle(
-                            color: Color(0XFFFFFFFF),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
+                          try {
+                            setState(() {
+                              showLoader = true;
+                            });
+                            final newUser = await _auth
+                                .createUserWithEmailAndPassword(
+                                  email: email ?? '',
+                                  password: (password != null ? password! : ''),
+                                );
+                            setState(() {
+                              showLoader = false;
+                            });
+                            if (newUser != null) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (contexxt) => BaseScreen(),
+                                ),
+                              );
+                            }
+                          } catch (e) {
+                            setState(() {
+                              showLoader = false;
+                            });
+                            log(e.toString());
+                          }
+                        },
+                        child:
+                            showLoader
+                                ? CircularProgressIndicator()
+                                : Text(
+                                  'SIGN UP',
+                                  style: TextStyle(
+                                    color: Color(0XFFFFFFFF),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
                       ),
                     ),
                   ),
