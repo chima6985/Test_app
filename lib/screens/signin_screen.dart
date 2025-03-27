@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:test_application/screens/base_screen.dart';
 import 'package:test_application/screens/landing_page.dart';
 import 'package:test_application/screens/signup_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SigninScreen extends StatefulWidget {
   SigninScreen({super.key});
@@ -11,6 +13,10 @@ class SigninScreen extends StatefulWidget {
 
 class _SigninScreenState extends State<SigninScreen> {
   final Color singupScreenColor = Color(0XFFECF4E2);
+  final _auth = FirebaseAuth.instance;
+  String? email;
+  String? password;
+  bool showLoader = false;
 
   @override
   Widget build(BuildContext context) {
@@ -166,7 +172,9 @@ class _SigninScreenState extends State<SigninScreen> {
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
-                        onChanged: (value) {},
+                        onChanged: (value) {
+                          email = value;
+                        },
                       ),
                     ),
                   ),
@@ -177,12 +185,14 @@ class _SigninScreenState extends State<SigninScreen> {
                       width: 352,
                       child: TextField(
                         decoration: InputDecoration(
-                          labelText: 'Name',
+                          labelText: 'Password',
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
-                        onChanged: (value) {},
+                        onChanged: (value) {
+                          password = value;
+                        },
                       ),
                     ),
                   ),
@@ -233,7 +243,25 @@ class _SigninScreenState extends State<SigninScreen> {
                             ),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () async {
+                          try {
+                             final user = await _auth.signInWithEmailAndPassword(
+                            email: email ?? '',
+                            password: password ?? '',
+                          );
+                          if (user != null) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => BaseScreen(),
+                              ),
+                            );
+                          }
+                          } catch (e) {
+                            print(e);
+                          }
+                         
+                        },
                         child: Text(
                           'SIGN IN',
                           style: TextStyle(
