@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:test_application/screens/landing_page.dart';
 import 'package:test_application/screens/signup_screen.dart';
 
-class SigninScreen extends StatelessWidget {
+class SigninScreen extends StatefulWidget {
   SigninScreen({super.key});
+
+  @override
+  State<SigninScreen> createState() => _SigninScreenState();
+}
+
+class _SigninScreenState extends State<SigninScreen> {
   final Color singupScreenColor = Color(0XFFECF4E2);
+
   @override
   Widget build(BuildContext context) {
     final mqr = MediaQuery.of(context).size;
@@ -13,18 +20,18 @@ class SigninScreen extends StatelessWidget {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        body: SafeArea(
-          child: Container(
-            width: mqr.width,
-            height: mqr.height,
-            decoration: BoxDecoration(color: singupScreenColor),
-            child: SingleChildScrollView(
+        body: Container(
+          width: mqr.width,
+          height: mqr.height,
+          decoration: BoxDecoration(color: singupScreenColor),
+          child: SingleChildScrollView(
+            child: SafeArea(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    margin: EdgeInsets.all(10),
+                    margin: EdgeInsets.all(4),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Color(0XFFE5E5E5),
@@ -142,13 +149,13 @@ class SigninScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
-                        color: Color(0XFF3E3E3EB5),
+                        color: Color(0Xff3e3e3eb5),
                       ),
                     ),
                   ),
                   SizedBox(height: 30),
                   Center(
-                    child: Container(
+                    child: SizedBox(
                       height: 60,
                       width: 352,
                       child: TextField(
@@ -165,7 +172,7 @@ class SigninScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Center(
-                    child: Container(
+                    child: SizedBox(
                       height: 60,
                       width: 352,
                       child: TextField(
@@ -199,7 +206,7 @@ class SigninScreen extends StatelessWidget {
                               child: Text(
                                 'Forgot Password ?',
                                 style: TextStyle(
-                                  color: Color(0XFF3E3E3EB5),
+                                  color: Color(0Xff3e3e3eb5),
                                   fontSize: 15,
                                   fontWeight: FontWeight.w700,
                                 ),
@@ -210,9 +217,9 @@ class SigninScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 70),
+                  SizedBox(height: 100),
                   Center(
-                    child: Container(
+                    child: SizedBox(
                       height: 55,
                       width: 320,
                       child: ElevatedButton(
@@ -238,7 +245,7 @@ class SigninScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
                   Center(
                     child: RichText(
                       text: TextSpan(
@@ -264,7 +271,7 @@ class SigninScreen extends StatelessWidget {
                               child: Text(
                                 'SIGN UP',
                                 style: TextStyle(
-                                  color: Color(0XFF3E3E3EB5),
+                                  color: Color(0Xff3e3e3eb5),
                                   fontSize: 14,
                                   fontWeight: FontWeight.w700,
                                 ),

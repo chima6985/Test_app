@@ -11,7 +11,6 @@ class BaseScreen extends StatefulWidget {
 class _BaseScreenState extends State<BaseScreen> {
   final _auth = FirebaseAuth.instance;
   User? loggedInUser;
-
   @override
   void initState() {
     super.initState();
@@ -32,10 +31,25 @@ class _BaseScreenState extends State<BaseScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final mqr = MediaQuery.of(context).size;
+
     return Scaffold(
       body: Container(
+        height: mqr.height,
+        width: mqr.width,
         decoration: BoxDecoration(
           image: DecorationImage(image: AssetImage('assets/meditate.png')),
+        ),
+        child: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'Meditate',
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -6,7 +6,7 @@ import 'package:test_application/screens/landing_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class SignupScreen extends StatefulWidget {
-  SignupScreen({super.key});
+  const SignupScreen({super.key});
 
   @override
   State<SignupScreen> createState() => _SignupScreenState();
@@ -29,18 +29,18 @@ class _SignupScreenState extends State<SignupScreen> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        body: SafeArea(
-          child: Container(
-            margin: EdgeInsets.all(0),
-            width: mqr.width,
-            height: mqr.height,
-            decoration: BoxDecoration(color: singupScreenColor),
-            child: SingleChildScrollView(
+        body: Container(
+          margin: EdgeInsets.all(0),
+          width: mqr.width,
+          height: mqr.height,
+          decoration: BoxDecoration(color: singupScreenColor),
+          child: SingleChildScrollView(
+            child: SafeArea(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    margin: EdgeInsets.all(10),
+                    margin: EdgeInsets.all(4),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Color(0XFFE5E5E5),
@@ -158,7 +158,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
-                        color: Color(0XFF3E3E3EB5),
+                        color: Color(0Xff3e3e3eb5),
                       ),
                     ),
                   ),
