@@ -245,31 +245,62 @@ class _SigninScreenState extends State<SigninScreen> {
                         ),
                         onPressed: () async {
                           try {
-                             final user = await _auth.signInWithEmailAndPassword(
-                            email: email ?? '',
-                            password: password ?? '',
-                          );
-                          if (user != null) {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => BaseScreen(),
+                            setState(() {
+                              showLoader = true;
+                            });
+                            final user = await _auth.signInWithEmailAndPassword(
+                              email: email ?? '',
+                              password: password ?? '',
+                            );
+                            setState(() {
+                              showLoader = false;
+                            });
+                            if (user != null) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => BaseScreen(),
+                                ),
+                              );
+                            }
+                          } catch (e) {
+                            setState(() {
+                              showLoader = false;
+                            });
+
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(14),
+                                    topRight: Radius.circular(14),
+                                  ),
+                                ),
+                                backgroundColor: Colors.orange,
+                                content: Center(
+                                  child: Text(
+                                    'Invalid Details',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                ),
                               ),
                             );
                           }
-                          } catch (e) {
-                            print(e);
-                          }
-                         
                         },
-                        child: Text(
-                          'SIGN IN',
-                          style: TextStyle(
-                            color: Color(0XFFFFFFFF),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
+                        child:
+                            showLoader
+                                ? CircularProgressIndicator()
+                                : Text(
+                                  'SIGN IN',
+                                  style: TextStyle(
+                                    color: Color(0XFFFFFFFF),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
                       ),
                     ),
                   ),

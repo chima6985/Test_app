@@ -97,7 +97,7 @@ class OnboardScreen2 extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 60),
+            SizedBox(height: 50),
           ],
         ),
       ),
