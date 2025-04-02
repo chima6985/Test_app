@@ -14,18 +14,22 @@ void main() async {
     projectId: 'test-app-6c949',
   );
 
+  await Firebase.initializeApp(options: options);
+
   SharedPreferences prefs = await SharedPreferences.getInstance();
   bool? isFirstTime = prefs.getBool('is first time');
 
-  await Firebase.initializeApp(options: options);
-  runApp(MyApp());
+  
+  runApp(MyApp(isFirstTime: isFirstTime ?? true));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final bool isFirstTime;
+  const MyApp({super.key, required this.isFirstTime});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: MyHomePage());
+    return MaterialApp(debugShowCheckedModeBanner: false,
+     home: isFirstTime ? MyHomePage() : SigninScreen(),);
   }
 }
