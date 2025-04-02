@@ -270,12 +270,6 @@ class _SigninScreenState extends State<SigninScreen> {
 
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(14),
-                                    topRight: Radius.circular(14),
-                                  ),
-                                ),
                                 backgroundColor: Colors.orange,
                                 content: Center(
                                   child: Text(
