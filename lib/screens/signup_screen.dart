@@ -1,9 +1,9 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:test_application/screens/base_screen.dart';
 import 'package:test_application/screens/landing_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -283,6 +283,8 @@ class _SignupScreenState extends State<SignupScreen> {
                               showLoader = false;
                             });
                             if (newUser != null) {
+                              SharedPreferences prefs = await SharedPreferences.getInstance();
+                              prefs.setBool('isFirstTime', false);
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(

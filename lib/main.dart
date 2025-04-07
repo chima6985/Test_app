@@ -17,7 +17,7 @@ void main() async {
   await Firebase.initializeApp(options: options);
 
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  bool? isFirstTime = prefs.getBool('is first time');
+  bool? isFirstTime = prefs.getBool('isFirstTime');
 
   
   runApp(MyApp(isFirstTime: isFirstTime ?? true));
